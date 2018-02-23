@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="u.paises.Language">
+
+
+    <LinearLayout
+        android:layout_width="283dp"
+        android:layout_height="143dp"
+        android:foregroundGravity="center_vertical|center_horizontal|center"
+        android:gravity="center_vertical|fill_vertical|center_horizontal|center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/btnEs"
+            android:layout_width="142dp"
+            android:layout_height="122dp"
+            android:layout_gravity="left|center_vertical"
+            android:background="@drawable/es"
+            android:onClick="onBtnEsClick"
+            android:text="ESPAÑOL"
+            tools:layout_editor_absoluteX="58dp"
+            tools:layout_editor_absoluteY="150dp" />
+
+        <Button
+            android:id="@+id/btnEn"
+            android:layout_width="142dp"
+            android:layout_height="122dp"
+            android:layout_gravity="right|center_vertical"
+            android:background="@drawable/en"
+            android:text="ENGLISH"
+            tools:layout_editor_absoluteX="225dp"
+            tools:layout_editor_absoluteY="158dp" />
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
