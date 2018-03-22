@@ -18,4 +18,10 @@ public class Language extends AppCompatActivity {
         Intent show = new Intent(Language.this, EsActivity.class);
         startActivity(show);
     }
+
+    public void onBtnEnClick(View view)
+    {
+        Intent show = new Intent(Language.this, EnActivity.class);
+        startActivity(show);
+    }
 }

@@ -1,40 +1,31 @@
 package u.paises;
 
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import org.json.JSONException;
-import org.json.JSONObject;
 
-import java.io.IOException;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
-
-public class EsActivity extends AppCompatActivity {
+public class EnActivity extends AppCompatActivity {
 
     ListView listView ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_es);
+        setContentView(R.layout.activity_en);
         CountryAccess ca = new CountryAccess(this);
 
         // Get ListView object from xml
-            listView = (ListView) findViewById(R.id.lstPaises);
+        listView = (ListView) findViewById(R.id.lstPaises);
 
         try {
             String[] values = new String[250];
-            values = ca.getCountries("es").toArray(values);
+            values = ca.getCountries("en").toArray(values);
 
             //Log.d("test", String.valueOf(ca.getCountries("es").size()));
             ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
@@ -68,16 +59,5 @@ public class EsActivity extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
-        //String[] values = new String[lst.size()];
-        //values = lst.toArray(values);
-
-            // Define a new Adapter
-            // First parameter - Context
-            // Second parameter - Layout for the row
-            // Third parameter - ID of the TextView to which the data is written
-            // Forth - the Array of data
-
-
     }
 }
