@@ -6,15 +6,10 @@ import android.util.Log;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
 
 /**
  * Created by willy on 25/02/18.
@@ -74,5 +69,9 @@ public class CountryAccess {
         }
 
         return  lstCountries;
+    }
+
+    public String getCapital(int id) throws JSONException {
+        return  this.countries.getJSONObject(id).getString("capital");
     }
 }

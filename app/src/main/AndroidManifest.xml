@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".EsActivity" />
-        <activity android:name=".EnActivity"></activity>
+        <activity android:name=".EnActivity" />
+        <activity android:name=".CapitalActivity"></activity>
     </application>
 
 </manifest>

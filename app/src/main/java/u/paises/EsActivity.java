@@ -27,7 +27,7 @@ public class EsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_es);
-        CountryAccess ca = new CountryAccess(this);
+        final CountryAccess ca = new CountryAccess(this);
 
         // Get ListView object from xml
             listView = (ListView) findViewById(R.id.lstPaises);
@@ -35,6 +35,7 @@ public class EsActivity extends AppCompatActivity {
         try {
             String[] values = new String[250];
             values = ca.getCountries("es").toArray(values);
+
 
             //Log.d("test", String.valueOf(ca.getCountries("es").size()));
             ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
@@ -52,16 +53,19 @@ public class EsActivity extends AppCompatActivity {
                                         int position, long id) {
 
                     // ListView Clicked item index
-                    int itemPosition     = position;
 
                     // ListView Clicked item value
                     String  itemValue    = (String) listView.getItemAtPosition(position);
 
                     // Show Alert
+                    try
+                    {
                     Toast.makeText(getApplicationContext(),
-                            "Position :"+itemPosition+"  ListItem : " +itemValue , Toast.LENGTH_LONG)
+                            "Capital :"+ca.getCapital(position) , Toast.LENGTH_LONG)
                             .show();
-
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                 }
 
             });

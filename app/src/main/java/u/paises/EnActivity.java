@@ -18,7 +18,7 @@ public class EnActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_en);
-        CountryAccess ca = new CountryAccess(this);
+        final CountryAccess ca = new CountryAccess(this);
 
         // Get ListView object from xml
         listView = (ListView) findViewById(R.id.lstPaises);
@@ -43,16 +43,19 @@ public class EnActivity extends AppCompatActivity {
                                         int position, long id) {
 
                     // ListView Clicked item index
-                    int itemPosition     = position;
 
                     // ListView Clicked item value
                     String  itemValue    = (String) listView.getItemAtPosition(position);
 
                     // Show Alert
-                    Toast.makeText(getApplicationContext(),
-                            "Position :"+itemPosition+"  ListItem : " +itemValue , Toast.LENGTH_LONG)
-                            .show();
-
+                    try
+                    {
+                        Toast.makeText(getApplicationContext(),
+                                "Capital :"+ca.getCapital(position) , Toast.LENGTH_LONG)
+                                .show();
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                 }
 
             });
